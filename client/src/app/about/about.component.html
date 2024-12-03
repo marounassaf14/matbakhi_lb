@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In Page</title>
+        <!-- Link to custom CSS file -->
+        <link rel="stylesheet" href="./about.component.css">
+    </head>
+<body>
+    <!--====== NAVBAR ONE PART START ======-->
+<section class="navbar-area navbar-one">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand-logo" routerLink="">
+              <img src="../../assets/images/logo.png" alt="Logo" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-target="#navbarOne"
+              aria-controls="navbarOne"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarOne">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item"><a routerLink="" >Home</a></li>
+                    <li class="nav-item"><a routerLink="../ingredients">Ingredients</a></li>
+                    <li class="nav-item"><a routerLink="../recipes">Recipes</a></li>
+                    <li class="nav-item"><a routerLink="../supermarkets">Supermarkets</a></li>
+                    <li class="nav-item"><a routerLink="../about">About</a></li>
+                    
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ <!--====== NAVBAR ONE PART ENDS ======-->
+ 
+ <!--====== Bootstrap js ======-->
+ <script src="https://cdn.ayroui.com/1.0/js/bootstrap.bundle.min.js"></script>
+ 
+ <script>
+    //===== close navbar-collapse when a  clicked
+    let navbarTogglerOne = document.querySelector(
+      ".navbar-one .navbar-toggler"
+    );
+    navbarTogglerOne.addEventListener("click", function () {
+      navbarTogglerOne.classList.toggle("active");
+    });
+ </script>
+ 
+ <!--====== TEAM STYLE ONE START ======-->
+<section class="team-area">
+   <h2 class = "title fw-bold text-center">Meet the Team</h2>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-3 col-md-6">
+            <div class="single-team text-center team-style-one">
+               <div class="team-image">
+                  <img src="../../assets/images/WhatsApp Image 2024-10-02 at 11.45.33 AM.jpeg" alt="Team" />
+               </div>
+               <div class="team-content">
+                  <h4 class="name">Camil Daou</h4>
+                  <span class="sub-title">Co-Founder</span>
+                  <ul class="social">
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-linkedin"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- single team -->
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="single-team text-center team-style-one">
+               <div class="team-image">
+                  <img src="../../assets/images/mozi.jpg" alt="Team" />
+               </div>
+               <div class="team-content">
+                  <h4 class="name">Maroun Assaf</h4>
+                  <span class="sub-title">Co-Founder</span>
+                  <ul class="social">
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-linkedin"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- single team -->
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="single-team text-center team-style-one">
+               <div class="team-image">
+                  <img src="../../assets/images/WhatsApp Image 2024-11-20 at 11.01.51 PM.jpeg" alt="Team" />
+               </div>
+               <div class="team-content">
+                  <h4 class="name">Jad Rabihal</h4>
+                  <span class="sub-title">Head Janitor</span>
+                  <ul class="social">
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-linkedin"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- single team -->
+         </div>
+         <div class="col-lg-3 col-md-6">
+            <div class="single-team text-center team-style-one">
+               <div class="team-image">
+                  <img src="../../assets/images/abdelkapour.webp" alt="Team" />
+               </div>
+               <div class="team-content">
+                  <h4 class="name">Joey AbdelKapour</h4>
+                  <span class="sub-title">Smelly Indian</span>
+                  <ul class="social">
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-facebook"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-linkedin"></i>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <!-- single team -->
+         </div>
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+</section>
+<!--====== TEAM STYLE ONE ENDS ======-->
+ <!--====== ABOUT ONE PART START ======-->
+<section class="about-area about-one">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="about-title text-center">
+               <h2 class="title fw-bold">Why Choose Us</h2>
+            </div>
+         </div>
+      </div>
+      <!-- row -->
+      <div class="row justify-content-center">
+         <div class="col-md-4 col-sm-8">
+            <div class="single-about-items">
+               <div class="items-icon">
+                  <i class="fas fa-bullhorn"></i>
+               </div>
+               <div class="items-content">
+                  <h4 class="items-title">It's absolutely free!</h4>
+                  <p class="text">
+                     Our services are free, so you can enjoy them without any hidden costs.
+                  </p>
+               </div>
+            </div>
+            <!-- single about items -->
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <div class="single-about-items">
+               <div class="items-icon">
+                  <i class="fas fa-piggy-bank"></i>
+               </div>
+               <div class="items-content">
+                  <h4 class="items-title">Save Money!</h4>
+                  <p class="text">
+                     We strive to help you find the best deals for your ingredients
+                  </p>
+               </div>
+            </div>
+            <!-- single about items -->
+         </div>
+         <div class="col-md-4 col-sm-8">
+            <div class="single-about-items">
+               <div class="items-icon">
+                  <i class="fas fa-handshake"></i>
+               </div>
+               <div class="items-content">
+                  <h4 class="items-title">User Friendliness</h4>
+                  <p class="text">
+                     Anytime, anywhere, any person of any age can easily use our website!
+                  </p>
+               </div>
+            </div>
+            <!-- single about items -->
+         </div>
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+</section>
+<!--====== ABOUT ONE PART ENDS ======-->
+<!--Section: FAQ-->
+<section class="faq-section">
+   <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
+   <p class="text-center mb-5">
+     Find the answers to the most frequently asked questions below.
+   </p>
+ 
+   <div class="row">
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i> How does Matbakhi find the best prices?</h6>
+       <p>
+         Matbakhi uses real-time data from partner supermarkets and other sources to compare prices and ensure you get the best deals for your ingredients.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i> Can I save my favorite recipes?</h6>
+       <p>
+         <strong><u>Absolutely!</u></strong> You can create an account to save your favorite recipes and access them anytime.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> Are the listed supermarket prices always up to date?</h6>
+       <p>
+         We strive to keep all prices accurate and up to date by syncing with supermarket data frequently. However, there may occasionally be slight delays in updates.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> Can I filter recipes by dietary preferences?</h6>
+       <p>
+         Yes! Matbakhi allows you to filter recipes by dietary preferences such as vegan, vegetarian, gluten-free, and more.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i> Is Matbakhi free to use?</h6>
+       <p>
+         <strong><u>Yes!</u></strong> Matbakhi offers free access to its core features. Premium features, if available, will be clearly marked.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i> Can I create a shopping list directly on Matbakhi?</h6>
+       <p>
+         Of course! You can generate a shopping list based on your selected recipes and even organize it by supermarket for convenience.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-carrot text-primary pe-2"></i> Does Matbakhi include international recipes?</h6>
+       <p>
+         Yes! Matbakhi features a diverse collection of recipes from different cuisines around the world.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-credit-card text-primary pe-2"></i> How do I pay for ingredients from partner supermarkets?</h6>
+       <p>
+         Payments are made directly through the partner supermarket’s website or in-store. Matbakhi does not process transactions.
+       </p>
+     </div>
+ 
+     <div class="col-md-6 col-lg-4 mb-4">
+       <h6 class="mb-3 text-primary"><i class="fas fa-question-circle text-primary pe-2"></i> What if I can't find a specific recipe or ingredient?</h6>
+       <p>
+         If you can't find something, feel free to use our "Request a Recipe" feature or suggest new ingredients to our team.
+       </p>
+     </div>
+   </div>
+</section>
+<!--Section: FAQ-->
+
+ <!--====== FOOTER ONE PART START ======-->
+<footer class="footer-area footer-one">
+    <div class="footer-widget">
+       <div class="container">
+          <div class="row">
+             <div class="col-xl-6 col-lg-4 col-sm-12">
+                <div class="f-about">
+                   <div class="footer-logo">
+                     <a routerLink="/About" (click)="scrollToTop()">
+                        <img src="../../assets/images/logo.png" alt="Logo" />
+                     </a>
+                   </div>
+                   <p class="text">
+                    Your Personal Kitchen Assistant                 </p>
+                </div>
+             </div>
+             <div class="col-xl-2 col-lg-2 col-sm-4">
+                <div class="footer-link">
+                   <h6 class="footer-title">Company</h6>
+                   <ul>
+                      <li><a href="index.html">About</a></li>
+                      <li><a href="javascript:void(0)">Contact</a></li>
+                      <li><a href="javascript:void(0)">Marketing</a></li>
+                      <li><a href="javascript:void(0)">Awards</a></li>
+                   </ul>
+                </div>
+                <!-- footer link -->
+             </div>
+             
+             <div class="col-xl-2 col-lg-3 col-sm-4">
+              <div class="footer-link">
+                 <h6 class="footer-title">Resources</h6>
+                 <ul>
+                    <li><a href="javascript:void(0)">Blog</a></li>
+                    <li><a href="javascript:void(0)">FAQs</a></li>
+                    <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                 </ul>
+              </div>
+              <!-- footer link -->
+           </div>
+             <div class="col-xl-2 col-lg-3 col-sm-4">
+                <!-- Start Footer Contact -->
+                <div class="footer-contact">
+                   <h6 class="footer-title">Help & Suport</h6>
+                   <ul>
+                    <li><a>Dbayeh, Lebanon</a></li>
+                    <li><a>+961 04 404 499</a></li>
+                    <li><a href="mailto:matbakhi&#64;gmail.com">matbakhi&#64;gmail.com</a></li>
+                </ul>
+                </div>
+                <!-- End Footer Contact -->
+             </div>
+          </div>
+          <!-- row -->
+       </div>
+       <!-- container -->
+    </div>
+    <!-- footer widget -->
+    <div class="footer-copyright">
+       <div class="container">
+          <div class="row">
+             <div class="col-lg-12">
+                <div
+                   class="
+                   copyright
+                   text-center
+                   d-md-flex
+                   justify-content-between
+                   align-items-center
+                   "
+                   >
+                   <p class="text">Copyright © 2024 Matbakhi. All Rights Reserved</p>
+                   <ul class="social">
+                      <li>
+                         <a href="javascript:void(0)">
+                         <i class="fab fa-facebook-f"></i>
+
+                         </a>
+                      </li>
+                      <li>
+                         <a href="javascript:void(0)">
+                         <i class="fab fa-twitter"></i>
+
+                         </a>
+                      </li>
+                      <li>
+                         <a href="javascript:void(0)">
+                         <i class="fab fa-instagram"></i>
+                         </a>
+                      </li>
+                      <li>
+                         <a href="javascript:void(0)"
+                            ><i class="fab fa-linkedin"></i
+                            ></a>
+                      </li>
+                   </ul>
+                </div>
+                <!-- copyright -->
+             </div>
+          </div>
+          <!-- row -->
+       </div>
+       <!-- container -->
+    </div>
+    <!-- footer copyright -->
+  </footer>
+  <!--====== FOOTER ONE PART ENDS ======-->
+  
+</body>
+</html>
+

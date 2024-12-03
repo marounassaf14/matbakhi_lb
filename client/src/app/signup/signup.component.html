@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In Page</title>        
+        <!-- Link to custom CSS file -->
+        <link rel="stylesheet" href="./signup.component.css">
+    </head>
+<body>
+    <!--====== NAVBAR ONE PART START ======-->
+<section class="navbar-area navbar-one">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand-logo" routerLink="">
+              <img src="../../assets/images/logo.png" alt="Logo" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-target="#navbarOne"
+              aria-controls="navbarOne"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarOne">
+              <ul class="navbar-nav m-auto">
+               <li class="nav-item"><a routerLink="" >Home</a></li>
+               <li class="nav-item"><a routerLink="../ingredients">Ingredients</a></li>
+               <li class="nav-item"><a routerLink="../recipes">Recipes</a></li>
+               <li class="nav-item"><a routerLink="../supermarkets">Supermarkets</a></li>
+                <li class="nav-item"><a routerLink="../about">About</a></li>
+                </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <!--====== NAVBAR ONE PART ENDS ======-->
+
+    <!--====== Bootstrap js ======-->
+    <script src="https://cdn.ayroui.com/1.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      //===== close navbar-collapse when a  clicked
+      let navbarTogglerOne = document.querySelector(
+        ".navbar-one .navbar-toggler"
+      );
+      navbarTogglerOne.addEventListener("click", function () {
+        navbarTogglerOne.classList.toggle("active");
+      });
+    </script>
+
+    <!--====== SIGNUP ONE PART START ======-->
+    <section class="signin-area signin-one">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <form action="#">
+              <div class="signin-form form-style-two rounded-buttons">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-input">
+                      <label
+                        >Name will be used to personalize your experience</label
+                      >
+                      <div class="input-items default">
+                        <i class="fas fa-user"></i>
+                        <!-- Font Awesome icon -->
+                        <input
+                          type="text"
+                          placeholder="Username"
+                          [(ngModel)]="username"
+                          name="username"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-input">
+                      <label>Enter your age</label>
+                      <div class="input-items default">
+                        <i class="fas fa-key"></i>
+                        <!-- Font Awesome icon -->
+                        <input
+                          type="age"
+                          placeholder="Age"
+                          [(ngModel)]="age"
+                          name="age"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-input">
+                      <label>Your account will be under this email</label>
+                      <div class="input-items default">
+                        <i class="fas fa-envelope"></i>
+                        <!-- Font Awesome icon -->
+                        <input
+                          type="text"
+                          placeholder="Email"
+                          [(ngModel)]="email"
+                          name="email"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-input">
+                      <label>Password for your account</label>
+                      <div class="input-items">
+                         <!-- Password Input -->
+                         <input
+                         [type]="passwordVisible ? 'text' : 'password'"
+                         placeholder="Password"
+                         [(ngModel)]="password"
+                         name="password"
+                         (input)="checkPasswordStrength(password)"
+                       />
+                     
+
+                        <!-- Eye icon for toggling password visibility -->
+                        <button
+                          type="button"
+                          class="password-toggle"
+                          (click)="togglePasswordVisibility()"
+                        >
+                          <i
+                            [class]="
+                              passwordVisible
+                                ? 'fas fa-eye-slash'
+                                : 'fas fa-eye'
+                            "
+                          ></i>
+                        </button>
+                     </div>
+
+                       
+
+                      <!-- Password validation messages -->
+                      <ul class="password-validation">
+                        <li
+                          [class.valid]="passwordContainsUppercase"
+                          [class.invalid]="!passwordContainsUppercase"
+                        >
+                          At least one uppercase letter
+                        </li>
+                        <li
+                          [class.valid]="passwordContainsSpecialChar"
+                          [class.invalid]="!passwordContainsSpecialChar"
+                        >
+                          At least one special character (!#$%^&*...)
+                        </li>
+                        <li
+                          [class.valid]="passwordMinLength"
+                          [class.invalid]="!passwordMinLength"
+                        >
+                          Minimum 10 characters
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="button-container">
+                      <button
+                        class="btn primary-btn rounded-full"
+                        type="button"
+                        (click)="signUp()"
+                      >
+                        Sign Up
+                      </button>
+                      <a
+                        routerLink="../signin"
+                        class="btn primary-btn-outline rounded-full"
+                        >I have a user</a
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-input text-center">
+                      <p class="text">
+                        By signing in you agree with the
+                        <a href="javascript:void(0)">Terms and Conditions</a>
+                        and
+                        <a href="javascript:void(0)">Privacy</a>
+                      </p>
+                    </div>
+                    <!-- form input -->
+                  </div>
+                </div>
+              </div>
+              <!-- signin form -->
+            </form>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </section>
+    <!--====== SIGNUP ONE PART ENDS ======-->
+    <!--====== FOOTER ONE PART START ======-->
+    <footer class="footer-area footer-one">
+      <div class="footer-widget">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-4 col-sm-12">
+              <div class="f-about">
+                <div class="footer-logo">
+                  <a routerLink="/" (click)="scrollToTop()">
+                    <img src="../../assets/images/logo.png" alt="Logo" />
+                  </a>    
+                </div>
+                <p class="text">Your Personal Kitchen Assistant</p>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-sm-4">
+              <div class="footer-link">
+                <h6 class="footer-title">Company</h6>
+                <ul>
+                  <li><a href="index.html">About</a></li>
+                  <li><a href="javascript:void(0)">Contact</a></li>
+                  <li><a href="javascript:void(0)">Marketing</a></li>
+                  <li><a href="javascript:void(0)">Awards</a></li>
+                </ul>
+              </div>
+              <!-- footer link -->
+            </div>
+
+            <div class="col-xl-2 col-lg-3 col-sm-4">
+              <div class="footer-link">
+                <h6 class="footer-title">Resources</h6>
+                <ul>
+                  <li><a href="javascript:void(0)">Blog</a></li>
+                  <li><a href="javascript:void(0)">FAQs</a></li>
+                  <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                </ul>
+              </div>
+              <!-- footer link -->
+            </div>
+            <div class="col-xl-2 col-lg-3 col-sm-4">
+              <!-- Start Footer Contact -->
+              <div class="footer-contact">
+                <h6 class="footer-title">Help & Suport</h6>
+                <ul>
+                  <li><a>Dbayeh, Lebanon</a></li>
+                  <li><a>+961 04 404 499</a></li>
+                  <li>
+                    <a href="mailto:matbakhi&#64;gmail.com"
+                      >matbakhi&#64;gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- End Footer Contact -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- footer widget -->
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div
+                class="copyright text-center d-md-flex justify-content-between align-items-center"
+              >
+                <p class="text">
+                  Copyright © 2024 Matbakhi. All Rights Reserved
+                </p>
+                <ul class="social">
+                                       <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-facebook-f"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-twitter"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="javascript:void(0)"
+                           ><i class="fab fa-linkedin"></i
+                           ></a>
+                     </li>
+                </ul>
+              </div>
+              <!-- copyright -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- footer copyright -->
+    </footer>
+    <!--====== FOOTER ONE PART ENDS ======-->
+  </body>
+</html>
