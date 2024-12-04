@@ -18,10 +18,12 @@
               <button
                 class="navbar-toggler"
                 type="button"
-                (click)="toggleNavbar()"
+                data-bs-target = "#navbarOne"
+                data-bs-toggle = "collapse"  
                 aria-controls="navbarOne"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                id="navbarToggler"
               >
                 <span class="toggler-icon"></span>
                 <span class="toggler-icon"></span>
@@ -31,11 +33,11 @@
               <!-- Navbar collapsible content -->
               <div #navbarCollapse class="collapse navbar-collapse sub-menu-bar" id="navbarOne">
                 <ul class="navbar-nav m-auto">
-                  <li class="nav-item"><a routerLink="">Home</a></li>
-                  <li class="nav-item"><a routerLink="ingredients">Ingredients</a></li>
-                  <li class="nav-item"><a routerLink="recipes">Recipes</a></li>
-                  <li class="nav-item"><a routerLink="supermarkets">Supermarkets</a></li>
-                  <li class="nav-item"><a routerLink="about">About</a></li>
+                  <li class="nav-item"><a routerLink="" class="nav-link">Home</a></li>
+                  <li class="nav-item"><a routerLink="ingredients" class="nav-link">Ingredients</a></li>
+                  <li class="nav-item"><a routerLink="recipes" class="nav-link">Recipes</a></li>
+                  <li class="nav-item"><a routerLink="supermarkets" class="nav-link">Supermarkets</a></li>
+                  <li class="nav-item"><a routerLink="about" >About</a></li>
                 </ul>
                 <div *ngIf="!isSignedIn" class="navbar-btn d-inline-block">
                   <ul>
@@ -53,6 +55,15 @@
           </div>
         </div>
       </div>
+      <script>
+         document.getElementById('navbarToggler').addEventListener('click', function() {
+           document.getElementById('navbarOne').classList.add('show');
+         });
+       
+         document.getElementById('navbarToggler').addEventListener('click', function() {
+           document.getElementById('navbarOne').classList.remove('show');
+         });
+       </script>
     </section>
     
    
@@ -60,17 +71,8 @@
 <!--====== NAVBAR ONE PART ENDS ======-->
 
 <!--====== Bootstrap js ======-->
-<script src="https://cdn.ayroui.com/1.0/js/bootstrap.bundle.min.js"></script>
 
-<script>
-   //===== close navbar-collapse when a  clicked
-   let navbarTogglerOne = document.querySelector(
-     ".navbar-one .navbar-toggler"
-   );
-   navbarTogglerOne.addEventListener("click", function () {
-     navbarTogglerOne.classList.toggle("active");
-   });
-</script>
+
 
 <!--
   <div class="section-title-one">
@@ -153,165 +155,169 @@
 <!--====== HEADER ONE PART ENDS ======-->
 <!--====== SLIDER ONE PART START ======-->
 <section id="carousel" class="slider-area slider-one">
-   <div class="bd-example">
-      <div id="carouselOne" class="carousel slide" data-ride="carousel">
-         <ol class="carousel-indicators">
-            <li
-               data-target="#carouselOne"
-               data-slide-to="0"
-               class="active"
-               ></li>
-            <li data-target="#carouselOne" data-slide-to="1"></li>
-            <li data-target="#carouselOne" data-slide-to="2"></li>
-         </ol>
-         <div class="carousel-inner">
-            <div
-               class="carousel-item bg_cover active"
-               style="
-               background-image: url('../../assets/images/cooking.webp');
-               "
-               >
-               <div class="carousel-caption">
-                  <div class="container">
-                     <div class="row justify-content-center">
-                        <div class="col-xl-6 col-lg-7 col-sm-10">
-                           <h2 class="carousel-title">
-                              Find Recipes Based on What You Have 
-                           </h2>
-                           <p class="text">
-                              Input the ingredients you already have, and let us suggest creative recipes you can make immediately. Make the most out of what’s in your pantry.                           </p>
-                           <ul class="carousel-btn rounded-buttons">
-                              <li>
-                                 <a
-                                    class="btn primary-btn rounded-full"
-                                    routerLink="ingredients"
-                                    >
-                                    Choose your ingredients
-                                 </a>
-                              </li>
-                              <li>
-                                 <a
-                                    class="btn primary-btn-outline rounded-full"
-                                    routerLink="recipes"
-                                    >
-                                    Find recipes now
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <!-- row -->
-                  </div>
-                  <!-- container -->
-               </div>
-               <!-- carousel caption -->
-            </div>
-            <!-- carousel-item -->
-            <div
-               class="carousel-item bg_cover"
-               style="
-               background-image: url('../../assets/images/ingredientspic.jpg');
-               "
-               >
-               <div class="carousel-caption">
-                  <div class="container">
-                     <div class="row justify-content-center">
-                        <div class="col-xl-6 col-lg-7 col-sm-10">
-                           <h2 class="carousel-title">
-                              Get Missing Ingredients at the Best Prices                           </h2>
-                           <p class="text">
-                              Missing a few ingredients? Matbakhak finds the best nearby supermarkets with average pricing, helping you save time and money.
-                           </p>
-                           <ul class="carousel-btn rounded-buttons">
-                              <li>
-                                 <a
-                                    class="btn primary-btn rounded-full"
-                                    routerLink="supermarkets"                                    >
-                                    Find Supermarkets                                 </a>
-                              </li>
-                              <li>
-                                 <a
-                                    class="btn primary-btn-outline rounded-full"
-                                    routerLink="ingredients"
-                                    >
-                                    Create Shopping List                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <!-- row -->
-                  </div>
-                  <!-- container -->
-               </div>
-               <!-- carousel caption -->
-            </div>
-            <!-- carousel-item -->
-            <div
-               class="carousel-item bg_cover"
-               style="
-               background-image: url('../../assets/images/matbakh.webp');
-               "
-               >
-               <div class="carousel-caption">
-                  <div class="container">
-                     <div class="row justify-content-center">
-                        <div class="col-xl-6 col-lg-7 col-sm-10">
-                           <h2 class="carousel-title">
-                              Personalized Experience Just for You                           </h2>
-                           <p class="text">
-                              Save your favorite recipes, create shopping lists, and explore dietary options that suit you best—all in one place. Sign up for free today!
-                           </p>
-                           <ul class="carousel-btn rounded-buttons">
-                              <li>
-                                 <a
-                                    class="btn primary-btn rounded-full"
-                                    routerLink="signin"
-                                    >
-                                     Sign In                               
-                                 </a>
-                              </li>
-                              <li>
-                                 <a
-                                    class="btn primary-btn rounded-full"
-                                    routerLink="signup"
-                                    >
-                                    Sign Up                                 
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <!-- row -->
-                  </div>
-                  <!-- container -->
-               </div>
-               <!-- carousel caption -->
-            </div>
-            <!-- carousel-item -->
-         </div>
-         <!-- carousel-inner -->
-         <a
-            class="carousel-control-prev"
-            href="#carouselOne"
-            role="button"
-            data-slide="prev"
-            >
-         <i class="lni lni-chevron-left"></i>
-         </a>
-         <a
-            class="carousel-control-next"
-            href="#carouselOne"
-            role="button"
-            data-slide="next"
-            >
-         <i class="lni lni-chevron-right"></i>
-         </a>
-      </div>
-      <!-- carousel -->
-   </div>
-   <!-- bd-example -->
+  <div class="bd-example">
+     <div id="carouselOne" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+           <li
+              data-bs-target="#carouselOne"
+              data-bs-slide-to="0"
+              class="active"
+              ></li>
+           <li data-bs-target="#carouselOne" data-bs-slide-to="1"></li>
+           <li data-bs-target="#carouselOne" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+           <div
+              class="carousel-item bg_cover active"
+              style="
+              background-image: url('../../assets/images/cooking.webp');
+              "
+              >
+              <div class="carousel-caption">
+                 <div class="container">
+                    <div class="row justify-content-center">
+                       <div class="col-xl-6 col-lg-7 col-sm-10">
+                          <h2 class="carousel-title">
+                             Find Recipes Based on What You Have 
+                          </h2>
+                          <p class="text">
+                             Input the ingredients you already have, and let us suggest creative recipes you can make immediately. Make the most out of what’s in your pantry.                           </p>
+                          <ul class="carousel-btn rounded-buttons">
+                             <li>
+                                <a
+                                   class="btn primary-btn rounded-full"
+                                   routerLink="ingredients"
+                                   >
+                                   Choose your ingredients
+                                </a>
+                             </li>
+                             <li>
+                                <a
+                                   class="btn primary-btn-outline rounded-full"
+                                   routerLink="recipes"
+                                   >
+                                   Find recipes now
+                                </a>
+                             </li>
+                          </ul>
+                       </div>
+                    </div>
+                    <!-- row -->
+                 </div>
+                 <!-- container -->
+              </div>
+              <!-- carousel caption -->
+           </div>
+           <!-- carousel-item -->
+           <div
+              class="carousel-item bg_cover"
+              style="
+              background-image: url('../../assets/images/ingredientspic.jpg');
+              "
+              >
+              <div class="carousel-caption">
+                 <div class="container">
+                    <div class="row justify-content-center">
+                       <div class="col-xl-6 col-lg-7 col-sm-10">
+                          <h2 class="carousel-title">
+                             Get Missing Ingredients at the Best Prices                           </h2>
+                          <p class="text">
+                             Missing a few ingredients? Matbakhak finds the best nearby supermarkets with average pricing, helping you save time and money.
+                          </p>
+                          <ul class="carousel-btn rounded-buttons">
+                             <li>
+                                <a
+                                   class="btn primary-btn rounded-full"
+                                   routerLink="supermarkets"                                    >
+                                   Find Supermarkets                                 </a>
+                             </li>
+                             <li>
+                                <a
+                                   class="btn primary-btn-outline rounded-full"
+                                   routerLink="ingredients"
+                                   >
+                                   Create Shopping List                                 </a>
+                             </li>
+                          </ul>
+                       </div>
+                    </div>
+                    <!-- row -->
+                 </div>
+                 <!-- container -->
+              </div>
+              <!-- carousel caption -->
+           </div>
+           <!-- carousel-item -->
+           <div
+              class="carousel-item bg_cover"
+              style="
+              background-image: url('../../assets/images/matbakh.webp');
+              "
+              >
+              <div class="carousel-caption">
+                 <div class="container">
+                    <div class="row justify-content-center">
+                       <div class="col-xl-6 col-lg-7 col-sm-10">
+                          <h2 class="carousel-title">
+                             Personalized Experience Just for You                           </h2>
+                          <p class="text">
+                             Save your favorite recipes, create shopping lists, and explore dietary options that suit you best—all in one place. Sign up for free today!
+                          </p>
+                          <ul class="carousel-btn rounded-buttons">
+                             <li>
+                                <a
+                                   class="btn primary-btn rounded-full"
+                                   routerLink="signin"
+                                   >
+                                    Sign In                               
+                                </a>
+                             </li>
+                             <li>
+                                <a
+                                   class="btn primary-btn rounded-full"
+                                   routerLink="signup"
+                                   >
+                                   Sign Up                                 
+                                </a>
+                             </li>
+                          </ul>
+                       </div>
+                    </div>
+                    <!-- row -->
+                 </div>
+                 <!-- container -->
+              </div>
+              <!-- carousel caption -->
+           </div>
+           <!-- carousel-item -->
+        </div>
+        <!-- carousel-inner -->
+        <a
+           class="carousel-control-prev"
+           href="#carouselOne"
+           role="button"
+           data-bs-slide="prev"
+           >
+        <i class="fa fa-chevron-left"></i>
+        </a>
+        <a
+           class="carousel-control-next"
+           href="#carouselOne"
+           role="button"
+           data-bs-slide="next"
+           >
+        <i class="fa fa-chevron-right"></i>
+        </a>
+     </div>
+     <!-- carousel -->
+  </div>
+  <!-- bd-example -->
 </section>
 <!--====== SLIDER ONE PART ENDS ======-->
+
+
+
+
 <!--
 Ingredient Selection 
   <div class="container mt-5">
@@ -474,7 +480,7 @@ Ingredient Selection
                   <div class="testimonial-image">
                     <img src="../../assets/images/matbakhi-guy1.jpg" alt="Author" />
                     <div class="quote-icon">
-                      <i class="lni lni-quotation"></i>
+                      <i class="fa fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
@@ -491,7 +497,7 @@ Ingredient Selection
                   <div class="testimonial-image">
                     <img src="../../assets/images/matbakhi-girl1.jpg" alt="Author" />
                     <div class="quote-icon">
-                      <i class="lni lni-quotation"></i>
+                      <i class="fa fa-quote-right"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
@@ -507,7 +513,7 @@ Ingredient Selection
                   <div class="testimonial-image">
                     <img src="../../assets/images/matbakhi-guy2.jpg" alt="Author" />
                     <div class="quote-icon">
-                      <i class="lni lni-quotation"></i>
+                      <i class="fa fa-quote-left"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
@@ -523,7 +529,7 @@ Ingredient Selection
                   <div class="testimonial-image">
                     <img src="../../assets/images/matbakhi-girl3.jpg" alt="Author" />
                     <div class="quote-icon">
-                      <i class="lni lni-quotation"></i>
+                      <i class="fa fa-quote-right"></i>
                     </div>
                   </div>
                   <div class="testimonial-content">
@@ -539,7 +545,7 @@ Ingredient Selection
                  <div class="testimonial-image">
                    <img src="../../assets/images/matbakhi-guy3.jfif" alt="Author" />
                    <div class="quote-icon">
-                     <i class="lni lni-quotation"></i>
+                     <i class="fa fa-quote-left"></i>
                    </div>
                  </div>
                  <div class="testimonial-content">
@@ -555,7 +561,7 @@ Ingredient Selection
                  <div class="testimonial-image">
                    <img src="../../assets/images/matbakhi-girl2.jpg" alt="Author" />
                    <div class="quote-icon">
-                     <i class="lni lni-quotation"></i>
+                     <i class="fa fa-quote-right"></i>
                    </div>
                  </div>
                  <div class="testimonial-content">
@@ -656,7 +662,7 @@ Ingredient Selection
         <div class="col-md-3 col-6">
            <div class="single-client text-center">
             <a href="https://www.carrefourlebanon.com/maflbn/en/">
-              <img src="../../assets/images/carrefour (1).webp" alt="Logo" />
+              <img src="../../assets/images/carrefour1-ezgif.com-webp-to-jpg-converter-removebg-preview.png" alt="Logo" />
               </a>
            </div>
            <!-- single client -->

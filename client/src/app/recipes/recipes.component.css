@@ -727,7 +727,6 @@
 }
   /* Style for the search button */
   .btn-primary {
-    padding: 10px 20px;
     border-radius: 0 4px 4px 0;
     border: 1px solid var(--primary); /* Orange border */
     background-color: var(--primary); /* Orange background */
@@ -738,4 +737,11 @@
   .btn-primary:hover {
     background-color: var(--primary); /* Darker orange background on hover */
     border-color: var(--primary-dark); /* Darker orange border on hover */
+  }
+  .btn-primary:active,
+  .btn-primary:focus {
+    background-color: var(--primary-dark) !important; /* Darker orange background on click */
+    border-color: var(--primary-dark) !important; /* Darker orange border on click */
+    outline: none !important; /* Remove default focus outline */
+    box-shadow: none !important; /* Remove any default box-shadow */
   }

@@ -990,12 +990,14 @@ body {
 .check-cart-btn {
   font-size: 1.5rem; /* Larger font size */
   padding: 15px 30px; /* Larger padding */
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 32px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: var(--primary); /* Orange background */
+  border: 1px solid var(--primary); /* Orange border */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove default focus outline */
 }
-
 /* Style the Generate Recipe button */
 .generate-recipe-btn {
   font-size: 1.5rem; /* Larger font size */
@@ -1008,4 +1010,50 @@ body {
   
 }
 
+/* Style for the search bar container */
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
 
+/* Style for the search input */
+.form-outline {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary); /* Orange border */
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--primary); /* Orange border on focus */
+  box-shadow: 0 0 5px rgba(255, 152, 0, 0.5); /* Orange shadow on focus */
+}
+  /* Style for the search button */
+  .btn-primary {
+    border-radius: 0 4px 4px 0;
+    border: 1px solid var(--primary); /* Orange border */
+    background-color: var(--primary); /* Orange background */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary); /* Darker orange background on hover */
+    border-color: var(--primary-dark); /* Darker orange border on hover */
+  }
+  .btn-primary:active,
+  .btn-primary:focus {
+    background-color: var(--primary-dark) !important; /* Darker orange background on click */
+    border-color: var(--primary-dark) !important; /* Darker orange border on click */
+    outline: none !important; /* Remove default focus outline */
+    box-shadow: none !important; /* Remove any default box-shadow */
+  }

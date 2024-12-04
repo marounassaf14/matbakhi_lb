@@ -560,11 +560,12 @@
     border-color: var(--gray-4);
     pointer-events: none;
   }
+
+
+  
   
   /*===== SLIDER ONE =====*/
-  .slider-one .bd-example .carousel .carousel-inner {
-    background-color: var(--primary);
-  }
+
   .slider-one .bd-example .carousel .carousel-inner .carousel-item {
     height: auto;
     padding: 300px 0;
@@ -1512,3 +1513,4 @@
      width: 100%;
   }
 }
+
