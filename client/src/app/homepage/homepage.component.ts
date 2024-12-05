@@ -31,6 +31,7 @@ export class HomepageComponent implements OnInit {
     this.user = JSON.parse(userData);}
     this.loadScripts();
     this.initializeTinySlider();
+    this.scrollToTop();
     
  }
  scrollToFragment(fragmentGo:string): void {

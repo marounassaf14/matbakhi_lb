@@ -36,6 +36,8 @@ export class IngredientsComponent implements OnInit {
       this.searchTerm = params['term'] || '';
       this.currentPage = params['page'] ? parseInt(params['page']) : 1;
       this.loadIngredients();
+      this.scrollToTop();
+
     });
   }
 

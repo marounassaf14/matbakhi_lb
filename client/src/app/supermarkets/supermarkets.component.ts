@@ -19,6 +19,8 @@ export class SupermarketsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSupermarkets();
+    this.scrollToTop();
+
   }
 
   // Fetch all supermarkets

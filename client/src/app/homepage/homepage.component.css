@@ -762,7 +762,48 @@
   .slider-one .bd-example .carousel .carousel-indicators li:hover {
     opacity: 1;
   }
-  
+  /* Define the primary color in the :root selector for global access */
+:root {
+  --primary: #007bff;  /* Bootstrap's default primary blue color */
+}
+
+/* Style for the dropdown menu */
+.navbar .dropdown-menu {
+  background-color: var(--primary); /* Use the primary color variable */
+  border-radius: 5px;        /* Rounded corners */
+  border: 1px solid #ddd;    /* Light border for the dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for a floating effect */
+  min-width: 180px;           /* Set a minimum width for dropdown */
+}
+
+/* Style for each dropdown item */
+.navbar .dropdown-item {
+  color: #fff;               /* White text color */
+  padding: 10px 15px;        /* Padding to make the items more clickable */
+  font-size: 14px;           /* Text size */
+  text-align: left;          /* Align text to the left */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for dropdown items */
+.navbar .dropdown-item:hover {
+  background-color: var(--primary-dark); /* Use a darker shade of the primary color */
+  color: #fff;               /* Keep text color white on hover */
+  cursor: pointer;           /* Change cursor to indicate it’s clickable */
+}
+
+/* Active state for dropdown item */
+.navbar .dropdown-item:active {
+  background-color: var(--primary-dark); /* Use the same dark primary color on click */
+  color: #fff;               /* White text on click */
+}
+
+/* Optional: Add a subtle hover effect for the dropdown button itself */
+.navbar .dropdown-toggle:hover {
+  color: var(--primary); /* Change color of the dropdown button on hover */
+  cursor: pointer;
+}
+
   /*===== FOOTER ONE =====*/
   .footer-one {
     background-color: lightgray;
@@ -770,7 +811,7 @@
   .footer-one .footer-logo {
     margin-top: 70px;
   }
-  /*gpt start*/
+  
   
   .footer-widget {
     display: flex;
