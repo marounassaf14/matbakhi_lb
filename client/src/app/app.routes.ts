@@ -7,7 +7,7 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { SupermarketsComponent } from './supermarkets/supermarkets.component';
 import { AboutComponent } from './about/about.component';
-import { CarouselComponent } from './carousel/carousel.component';
+
 export const routes: Routes = [
     {path: '', component: HomepageComponent },
     {path: 'signin', component: SigninComponent},
@@ -16,7 +16,8 @@ export const routes: Routes = [
     {path:'supermarkets', component: SupermarketsComponent},
     {path:'recipes', component: RecipesComponent},
     {path:'ingredients', component: IngredientsComponent},
-    {path: 'carousel', component: CarouselComponent}
 
      // Add a route for the new component
   ];
+
+

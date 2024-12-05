@@ -78,9 +78,17 @@ export class RecipesComponent implements OnInit {
     if (page > 0 && page <= this.totalPages) {
       this.router.navigate(['/recipes'], { queryParams: { term: this.searchTerm, page: page } });
     }
+    this.scrollToTop();
   }
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  
+  scrollToFragment(fragmentGo:string): void {
+    this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
+      const element = document.getElementById(fragmentGo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 }

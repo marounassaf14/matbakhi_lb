@@ -45,6 +45,13 @@ export class SigninComponent {
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  
+  scrollToFragment(fragmentGo:string): void {
+    this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
+      const element = document.getElementById(fragmentGo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 
 }

@@ -33,7 +33,14 @@ export class HomepageComponent implements OnInit {
     this.initializeTinySlider();
     
  }
-
+ scrollToFragment(fragmentGo:string): void {
+  this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
+    const element = document.getElementById(fragmentGo);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+}
  signOut() {
   sessionStorage.removeItem('isSignedIn');
   sessionStorage.removeItem('user');

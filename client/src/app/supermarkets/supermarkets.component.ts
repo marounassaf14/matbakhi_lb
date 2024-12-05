@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common'; // Import CommonModule for NgFor and other directives
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule for NgFor
 export class SupermarketsComponent implements OnInit {
   supermarkets: any[] = []; // Array to hold fetched supermarkets
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loadSupermarkets();
@@ -36,6 +36,14 @@ export class SupermarketsComponent implements OnInit {
   }
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  scrollToFragment(fragmentGo:string): void {
+    this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
+      const element = document.getElementById(fragmentGo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 
 }

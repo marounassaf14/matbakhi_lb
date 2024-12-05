@@ -356,6 +356,25 @@ app.get('/api/ingredients/all', async (req, res) => {
     }
 });
 
+
+app.get('/api/ingredients', async (req, res) => {
+    try {
+      const recipes = await Ingredient.find();
+      res.status(200).json(recipes);
+    } catch (error) {
+      res.status(500).json({ message: 'Error retrieving recipes', error });
+    }
+  });
+  
+  app.get('/api/recipes/allRecipes', async (req, res) => {
+    try {
+      const recipes = await RECIPE.find();
+      res.status(200).json(recipes);
+    } catch (error) {
+      res.status(500).json({ message: 'Error retrieving recipes', error });
+    }
+  });
+
 app.delete('/api/ingredients', async (req, res) => {
     try {
         const result = await Ingredient.deleteMany({});
