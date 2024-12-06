@@ -82,6 +82,7 @@ export class IngredientsComponent implements OnInit {
   
     this.router.navigate(['/recipes'], { queryParams: { term: searchTerm, page: page } });
     this.toggleCartPopup(); // Close popup after navigating
+    this.scrollToTop();
   }
   
   scrollToFragment(fragmentGo:string): void {
