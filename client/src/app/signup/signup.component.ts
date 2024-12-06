@@ -18,7 +18,6 @@ export class SignupComponent {
   password: string = '';
   age: number | null = null;
 
-
   // Password validation flags
   passwordContainsUppercase: boolean = false;
   passwordContainsSpecialChar: boolean = false;
@@ -29,6 +28,13 @@ export class SignupComponent {
 
   // Sign-up method
   signUp() {
+    // Email validation check for @ and .com
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
     const passwordValidation = this.validatePassword(this.password);
 
     if (!passwordValidation.isValid) {
@@ -90,10 +96,12 @@ export class SignupComponent {
     const passwordInput = document.querySelector('input[name="password"]') as HTMLInputElement;
     passwordInput.type = this.passwordVisible ? 'text' : 'password';
   }
+
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  scrollToFragment(fragmentGo:string): void {
+
+  scrollToFragment(fragmentGo: string): void {
     this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
       const element = document.getElementById(fragmentGo);
       if (element) {

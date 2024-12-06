@@ -20,13 +20,18 @@ export class SigninComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   signIn() {
-    alert(this.email + this.password);
-
     if (!this.email || !this.password) {
       alert('Please enter both email and password');
       return;
     }
-  
+
+    // Email validation check for @ and .com
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(this.email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
     this.http.post('http://localhost:3000/api/signin', {
       email: this.email,
       password: this.password,
@@ -38,14 +43,16 @@ export class SigninComponent {
         this.router.navigate(['/']);
       },
       error: (error) => {
-        alert('Sign-in failed ');
+        alert('Sign-in failed');
       },
     });
   }
+
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  scrollToFragment(fragmentGo:string): void {
+
+  scrollToFragment(fragmentGo: string): void {
     this.router.navigate(['/about'], { fragment: fragmentGo }).then(() => {
       const element = document.getElementById(fragmentGo);
       if (element) {
@@ -53,5 +60,4 @@ export class SigninComponent {
       }
     });
   }
-
 }
