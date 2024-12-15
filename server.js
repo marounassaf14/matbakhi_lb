@@ -20,7 +20,7 @@ app.use(cors({
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://marounassaf14:assafmaroun1998@cluster0.wqgf2.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('{YOUR_CONNECTION_STRING}/', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error(err));
 
